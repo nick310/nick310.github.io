@@ -3,11 +3,21 @@ layout: default
 title: Home
 ---
 
-<div class="intro-text">
-  <h1>Nick310</h1>
-  <p>Writing about AI's impact on low income communities</p>
-  <p><a href="/archive/">View all writing →</a></p>
-</div>
+<ul class="post-list">
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <span class="date">{{ post.date | date: "%Y-%m-%d" }}</span>
+      <p class="excerpt">
+        {% if post.description %}
+          {{ post.description }}
+        {% else %}
+          {{ post.excerpt | strip_html | truncate: 160 }}
+        {% endif %}
+      </p>
+    </li>
+  {% endfor %}
+</ul>
 
 <div class="posts">
   {% for post in paginator.posts %}
