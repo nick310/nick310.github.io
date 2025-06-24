@@ -2,18 +2,22 @@
 layout: default
 title: Home
 ---
+
 <div class="home-content">
   <h1>Let's make AI work for the people</h1>
   
   <div class="posts-container">
-    {% for post in site.posts %}
-      <div class="post-item">
-        <a href="{{ post.url | relative_url }}" class="post-link">{{ post.title }}</a>
-        <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
-        {% if post.excerpt %}
-          <p class="excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-        {% endif %}
-      </div>
+    {% assign postsByYear = site.posts | group_by_exp:"post", "post.date | date: '%Y'" %}
+    {% for year in postsByYear %}
+      <h2 class="year-header">{{ year.name }}</h2>
+      {% for post in year.items %}
+        <div class="post-item">
+          <a href="{{ post.url | relative_url }}" class="post-link">{{ post.title }}</a>
+          {% if post.excerpt %}
+            <p class="excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
     {% endfor %}
   </div>
 </div>
