@@ -2,19 +2,18 @@
 layout: default
 title: Home
 ---
-
 <div class="home-content">
-  <h1>Writings</h1>
+  <h1>Let's make AI work for the people</h1>
   
-  <ul class="post-list">
+  <div class="posts-container">
     {% for post in site.posts %}
-      <li>
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <div class="post-item">
+        <a href="{{ post.url | relative_url }}" class="post-link">{{ post.title }}</a>
         <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
         {% if post.excerpt %}
           <p class="excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
         {% endif %}
-      </li>
+      </div>
     {% endfor %}
-  </ul>
+  </div>
 </div>
