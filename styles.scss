@@ -45,3 +45,52 @@
     margin-left: var(--spacer);
   }
 }
+
+// Homepage styles
+.home-content {
+  max-width: 650px;
+  margin: 0 auto;
+  
+  h1 {
+    font-size: 2em;
+    font-weight: normal;
+    margin-bottom: 1em;
+    font-family: Georgia, 'Times New Roman', serif;
+  }
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+  li {
+    margin-bottom: 1.5em;
+  }
+  
+  a {
+    color: #0066cc;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: normal;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  
+  .post-date {
+    color: #666;
+    font-size: 0.9em;
+    display: block;
+    font-family: Georgia, 'Times New Roman', serif;
+  }
+  
+  .excerpt {
+    margin-top: 0.3em;
+    color: #555;
+    font-size: 0.95em;
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.6;
+  }
+}
