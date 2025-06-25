@@ -1,10 +1,11 @@
 # Setup
 title: Nick Salazar
 tagline: ''
-url: https://nick310.github.io
+url: https://www.nicholassalazar.com
 paginate: 1
 baseurl: ""
 permalink: pretty
+description: Let's make AI work for the people
 
 # Gems
 plugins:
